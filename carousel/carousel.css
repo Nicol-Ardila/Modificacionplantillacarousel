@@ -1,0 +1,441 @@
+/* Fuente Poppins para toda la página */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* CSS para la barra de navegación */
+.navbar {
+  background-color: #373838;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+/* Estilo del botón del menú hamburguesa */
+.navbar-toggler {
+  display: none; /* Ocultar por defecto */
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  right: 10px;
+}
+
+/* Estilo del ícono del menú hamburguesa */
+.navbar-toggler-icon {
+  width: 30px;
+  height: 30px;
+  background: url('img/menu.png') no-repeat center center;
+  background-size: contain;
+}
+
+/* Estilo para el contenido de la barra de navegación */
+.navbar-brand {
+  color: red;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.navbar-nav {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  color: #f1efef;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.nav-link:hover {
+  color: #db0202;
+}
+
+.navbar-search {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-search input[type="text"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+  width: 150px;
+}
+
+.navbar-search button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: #db0202;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.navbar-search button:hover {
+  background-color: #a30202;
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+  .navbar-nav {
+    display: none; /* Ocultar el menú de navegación por defecto en pantallas pequeñas */
+    flex-direction: column;
+    width: 100%;
+    background-color: #373838; /* Fondo oscuro para el menú desplegable */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+  }
+
+  .navbar-collapse.show .navbar-nav {
+    display: flex; /* Mostrar el menú cuando esté activo */
+  }
+
+  .navbar-search {
+    display: none;
+  }
+
+  .navbar-toggler {
+    display: block; /* Mostrar el botón de menú hamburguesa en pantallas pequeñas */
+  }
+}
+
+
+/* Estilo del carrusel */
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease;
+  height: 100%;
+}
+
+.carousel-item {
+  min-width: 100%;
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Estilo para los botones de navegación */
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  width: 5%;
+  height: 50px;
+  color: rgb(245, 4, 4);
+  border: none;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transform: translateY(-50%);
+  background: none;
+  z-index: 1;
+}
+
+.carousel-control-prev {
+  left: 20px;
+}
+
+.carousel-control-next {
+  right: 20px;
+}
+
+/* Estilo para los indicadores */
+.carousel-indicators {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-indicators button {
+  background-color: white;
+  border: none;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  margin: 0 4px;
+  cursor: pointer;
+}
+
+.carousel-indicators .active {
+  background-color: red;
+}
+
+/* Estilo para el contenedor del texto en el carrusel */
+.carousel-caption {
+  position: absolute;
+  color: white;
+  font-size: 1.5rem;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  width: 80%; /* Ajusta el ancho según sea necesario */
+  max-width: 90%; /* Asegura que no se salga de la pantalla en pantallas pequeñas */
+}
+
+.carousel-caption.left {
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-caption.center {
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.carousel-caption.right {
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Botones en el contenedor del texto del carrusel */
+.carousel-caption a.btn {
+  background-color: #db0202;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.carousel-caption a.btn:hover {
+  background-color: #a30202;
+}
+
+/* Media queries para mejorar la responsividad */
+@media (max-width: 768px) {
+  /* Carrusel */
+  .carousel {
+    height: 50vh; /* Ajusta la altura del carrusel en pantallas pequeñas */
+  }
+
+  .carousel-item img {
+    object-fit: cover; /* Asegura que la imagen cubra el área del carrusel */
+  }
+
+  .carousel-caption {
+    font-size: 1rem; /* Reduce el tamaño del texto en pantallas pequeñas */
+    padding: 10px;
+    width: 90%; /* Asegura que el contenedor de texto se ajuste bien en pantallas pequeñas */
+    left: 50%; /* Centra el texto horizontalmente */
+    transform: translateX(-50%) translateY(0); /* Ajusta el texto para que se mantenga dentro de la pantalla */
+    z-index: 2; /* Asegura que el texto quede encima de la imagen */
+  }
+
+  .carousel-caption.left,
+  .carousel-caption.right {
+    position: absolute;
+    transform: translateY(-50%);
+  }
+
+  .carousel-caption.left {
+    left: 10px;
+  }
+
+  .carousel-caption.right {
+    right: 10px;
+  }
+
+  .carousel-caption.center {
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 40px; /* Ajusta el tamaño de los botones */
+    height: 40px;
+    font-size: 1.5rem;
+  }
+
+  .carousel-indicators button {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* Estilo para el contenido después del carrusel */
+.main-content {
+  background-color: #373838; /* Color de fondo igual al de la barra de navegación */
+  color: white; /* Color del texto */
+  padding: 20px;
+}
+
+/* Estilo para los contenedores dentro del main-content */
+.main-content h1, .main-content p {
+  color: white; /* Asegura que el texto dentro del main-content sea blanco */
+}
+
+/* Estilo para la sección de círculos en main-content */
+.main-content .circle-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.main-content .circle-section .col-lg-4 {
+  text-align: center;
+}
+
+.main-content .circle-section .rounded-circle {
+  border-radius: 50%;
+  background-color: #db0202; /* Color de fondo de los círculos */
+  color: white;
+  display: inline-block;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.main-content .circle-section .btn-secondary {
+  background-color: #db0202;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.main-content .circle-section .btn-secondary:hover {
+  background-color: #a30202;
+}
+
+/* Estilo para la sección de círculos en main-content */
+.circle-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.circle-section .col-lg-4 {
+  text-align: center;
+}
+
+.circle-section img {
+  border-radius: 50%;
+  width: 140px; /* Tamaño del círculo */
+  height: 140px;
+  object-fit: cover;
+}
+
+.circle-section h2 {
+  font-size: 1.5rem; /* Tamaño de fuente para el título */
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.circle-section p {
+  font-size: 1rem; /* Tamaño de fuente para los párrafos */
+  margin-bottom: 20px;
+}
+
+.circle-section .btn-secondary {
+  background-color: #db0202;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.circle-section .btn-secondary:hover {
+  background-color: #a30202;
+}
+
+@media (max-width: 768px) {
+  .circle-section {
+    flex-direction: column; /* Cambia la dirección de las columnas en pantallas pequeñas */
+  }
+
+  .circle-section .col-lg-4 {
+    margin-bottom: 20px; /* Espacio entre las columnas en pantallas pequeñas */
+    width: 100%; /* Asegura que las columnas ocupen el 100% del ancho */
+  }
+
+  .circle-section img {
+    width: 100px; /* Ajusta el tamaño del círculo en pantallas pequeñas */
+    height: 100px;
+  }
+
+  .circle-section h2 {
+    font-size: 1.25rem; /* Ajusta el tamaño de fuente del título en pantallas pequeñas */
+  }
+
+  .circle-section p {
+    font-size: 0.875rem; /* Ajusta el tamaño de fuente del párrafo en pantallas pequeñas */
+  }
+
+  .circle-section .btn-secondary {
+    padding: 8px 16px; /* Ajusta el tamaño del botón en pantallas pequeñas */
+  }
+}
+
+.featurette-container {
+  display: flex; /* Flexbox para alinear el texto y la imagen en fila */
+  align-items: center; /* Alinea verticalmente el contenido */
+  justify-content: space-between; /* Espacio entre el texto y la imagen */
+  gap: 20px; /* Añade espacio entre el texto y la imagen */
+  flex-wrap: nowrap; /* Asegura que los elementos no se apilen */
+}
+
+.text-content {
+  flex: 1; /* El texto ocupa todo el espacio disponible */
+}
+
+.image-content {
+  max-width: 40%; /* La imagen ocupa un 40% del ancho total */
+}
+
+.featurette-image {
+  width: 100%; /* Asegura que la imagen sea responsiva */
+  height: auto; /* Mantiene la proporción de la imagen */
+}
+
+@media (max-width: 768px) {
+  .featurette-container {
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+  }
+}
+
+.float-end {
+  text-align: right; /* Alinea el texto al final del contenedor */
+}
+
+.float-end a {
+  color: red; /* Cambia el color del enlace a rojo */
+  text-decoration: none; /* Opcional: quita el subrayado del enlace */
+}
